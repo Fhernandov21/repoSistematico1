@@ -26,7 +26,7 @@ public class FrmVehicle extends javax.swing.JFrame {
     private PnlVehicleController pnlVehicleController;
     private rPnlVehicle rpnlVehicle;
     private rPnlVehicleController rpnlVehicleController;
-
+    
     /**
      * Creates new form FrmVehicle
      */
@@ -96,7 +96,7 @@ public class FrmVehicle extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnNewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNewActionPerformed
-
+        
         try {
             if (pnlVehicle == null) {
                 pnlVehicle = new PnlVehicle();
@@ -111,6 +111,7 @@ public class FrmVehicle extends javax.swing.JFrame {
     }//GEN-LAST:event_btnNewActionPerformed
 
     private void btnViewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewActionPerformed
+        
         if (rpnlVehicle == null) {
             rpnlVehicle = new rPnlVehicle();
             try {
