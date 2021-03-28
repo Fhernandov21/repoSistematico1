@@ -22,6 +22,14 @@ public class rPnlVehicle extends javax.swing.JPanel {
         initComponents();
     }
 
+    public JButton getBtnDelete() {
+        return btnDelete;
+    }
+
+    public JButton getBtnUpdate() {
+        return btnUpdate;
+    }
+
     public JButton getBtnGetAll() {
         return btnGetAll;
     }
@@ -54,19 +62,18 @@ public class rPnlVehicle extends javax.swing.JPanel {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        btnGetAll = new javax.swing.JButton();
         txtSearch = new javax.swing.JTextField();
         btnSearch = new javax.swing.JButton();
+        btnDelete = new javax.swing.JButton();
+        btnUpdate = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tableVehicles = new javax.swing.JTable();
+        btnGetAll = new javax.swing.JButton();
 
         setLayout(new java.awt.BorderLayout());
 
         jPanel1.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.LEFT));
-
-        btnGetAll.setText("Mostrar todo");
-        jPanel1.add(btnGetAll);
 
         txtSearch.setPreferredSize(new java.awt.Dimension(250, 19));
         txtSearch.addActionListener(new java.awt.event.ActionListener() {
@@ -78,6 +85,12 @@ public class rPnlVehicle extends javax.swing.JPanel {
 
         btnSearch.setText("Buscar");
         jPanel1.add(btnSearch);
+
+        btnDelete.setText("Borrar");
+        jPanel1.add(btnDelete);
+
+        btnUpdate.setText("Actualizar");
+        jPanel1.add(btnUpdate);
 
         add(jPanel1, java.awt.BorderLayout.PAGE_START);
 
@@ -117,6 +130,12 @@ public class rPnlVehicle extends javax.swing.JPanel {
 
         jPanel2.add(jScrollPane1, java.awt.BorderLayout.CENTER);
 
+        btnGetAll.setBackground(new java.awt.Color(255, 255, 255));
+        btnGetAll.setForeground(new java.awt.Color(51, 0, 255));
+        btnGetAll.setText("Mostrar todo");
+        btnGetAll.setPreferredSize(new java.awt.Dimension(91, 100));
+        jPanel2.add(btnGetAll, java.awt.BorderLayout.PAGE_END);
+
         add(jPanel2, java.awt.BorderLayout.CENTER);
     }// </editor-fold>//GEN-END:initComponents
 
@@ -126,8 +145,10 @@ public class rPnlVehicle extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnDelete;
     private javax.swing.JButton btnGetAll;
     private javax.swing.JButton btnSearch;
+    private javax.swing.JButton btnUpdate;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;

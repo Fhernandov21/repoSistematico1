@@ -55,7 +55,7 @@ public class PnlVehicleController {
     private JFileChooser fileChooser;
     private JsonVehicleDaoImpl jvdao;
     private Border stockBorder;
-    private rPnlVehicle rpnlVehicle;
+    private rPnlVehicle rpnlVehicle = new rPnlVehicle();
     public PnlVehicleController(PnlVehicle pnlVehicle) throws FileNotFoundException {
         this.pnlVehicle = pnlVehicle;
         initComponent();
@@ -181,6 +181,7 @@ public class PnlVehicleController {
         jvdao.create(v);
         JOptionPane.showMessageDialog(null, "Vehicle saved successfully.",
                 "Information message", JOptionPane.INFORMATION_MESSAGE);
+        
 
     }
     

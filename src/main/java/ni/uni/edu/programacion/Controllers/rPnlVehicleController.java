@@ -46,18 +46,18 @@ public class rPnlVehicleController {
                 Logger.getLogger(rPnlVehicleController.class.getName()).log(Level.SEVERE, null, ex);
             }
         });
+        rpnlVehicle.getBtnGetAll().setText("Mostrar todo (DATOS DISPONIBLES)");
 
-    }
+    } 
     
 
     
     private void btnViewActionListener(ActionEvent e) throws IOException {                                        
         v = (List<Vehicle>) jvdao.getAll();
         
-        for (Vehicle vehicle : v) {
-            System.out.println(e);
-        }
         for(int i=0; i<v.size(); i++){
+            
+            
             rpnlVehicle.getTableVehicles().setValueAt((i+1),i,0);
             rpnlVehicle.getTableVehicles().setValueAt(v.get(i).getStockNumber(), i, 1);
             rpnlVehicle.getTableVehicles().setValueAt(v.get(i).getYear(), i, 2);
@@ -76,6 +76,6 @@ public class rPnlVehicleController {
             
             
         }
-        
+        rpnlVehicle.getBtnGetAll().setText("Mostrar todo");
     }
 }
