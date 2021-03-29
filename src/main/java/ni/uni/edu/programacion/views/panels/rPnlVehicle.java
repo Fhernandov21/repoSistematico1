@@ -84,9 +84,11 @@ public class rPnlVehicle extends javax.swing.JPanel {
         });
         jPanel1.add(txtSearch);
 
+        btnSearch.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/vidrio-de-aumento.png"))); // NOI18N
         btnSearch.setText("Buscar");
         jPanel1.add(btnSearch);
 
+        btnDelete.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/delete (2).png"))); // NOI18N
         btnDelete.setText("Borrar");
         btnDelete.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -95,6 +97,7 @@ public class rPnlVehicle extends javax.swing.JPanel {
         });
         jPanel1.add(btnDelete);
 
+        btnUpdate.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Webp.net-resizeimage.png"))); // NOI18N
         btnUpdate.setText("Actualizar");
         jPanel1.add(btnUpdate);
 
