@@ -147,7 +147,8 @@ public class PnlVehicleController {
 
     
     private void btnSaveActionListener(ActionEvent e) throws IOException, Exception {
-        int stock, year;
+        int stock;
+        int year;
         String make, model, style, vin, ecolor, icolor, miles, engine, image, status;
         float price;
         Vehicle.Transmission transmission = Vehicle.Transmission.AUTOMATIC;
@@ -157,7 +158,6 @@ public class PnlVehicleController {
                     "Error message", JOptionPane.ERROR_MESSAGE);
             return;
         }
-        
         
         stock = Integer.parseInt(pnlVehicle.getTxtStock().getText());
         year = Integer.parseInt(pnlVehicle.getCmbYear().getSelectedItem().toString());
@@ -183,7 +183,6 @@ public class PnlVehicleController {
         JOptionPane.showMessageDialog(null, "Vehicle saved successfully.",
                 "Information message", JOptionPane.INFORMATION_MESSAGE);
         
-
     }
     
     
