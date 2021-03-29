@@ -120,9 +120,11 @@ public class FrmVehicle extends javax.swing.JFrame {
                 Logger.getLogger(FrmVehicle.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
+        
         addComponent(rpnlVehicle);
     }//GEN-LAST:event_btnViewActionPerformed
 
+    
        private void addComponent(JComponent component) {
         pnlContent.removeAll();        
         pnlContent.add(component, BorderLayout.CENTER);

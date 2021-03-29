@@ -10,6 +10,7 @@ package ni.edu.uni.programacion.backend.pojo;
  * @author yasser.membreno
  */
 public class Vehicle {
+    
     private int stockNumber;//20    1
     private int year;//4    2
     private String make;//30    3

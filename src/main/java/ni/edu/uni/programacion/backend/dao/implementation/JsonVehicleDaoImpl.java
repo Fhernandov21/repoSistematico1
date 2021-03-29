@@ -10,6 +10,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
 import ni.edu.uni.programacion.backend.dao.VehicleDao;
@@ -31,7 +32,17 @@ public class JsonVehicleDaoImpl extends RandomTemplate implements VehicleDao{
     
     @Override
     public Vehicle findById(int id) throws IOException {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        List<Vehicle> vehicles = new ArrayList<>();
+        vehicles = (List<Vehicle>) getAll();
+        for (Vehicle vehicle : vehicles) {
+
+            if(vehicle.getStockNumber() == id){
+                
+                return vehicle;
+            }
+            
+        }
+        return null;
     }
 
     @Override
@@ -71,9 +82,43 @@ public class JsonVehicleDaoImpl extends RandomTemplate implements VehicleDao{
         
         return t.getStockNumber();
     }
+    private int[] add_ids (int[] arreglo,int id){
+        if(arreglo== null){
+            arreglo=new int[1];
+            arreglo[0]=id;
+            return arreglo;
+        }
+        arreglo=Arrays.copyOf(arreglo , arreglo.length +1 );
+        arreglo[arreglo.length-1]=id;
+        return arreglo;
+    }
 
     @Override
     public boolean delete(Vehicle t) throws IOException {
+//        if(t==null){
+//            return false;
+//        }
+//        
+//        int[] ides = null;
+//        getCustomRandom().getRafH().seek(0);
+//        int n = getCustomRandom().getRafH().readInt();
+//        int k = getCustomRandom().getRafH().readInt();
+//        
+//        for(int i=0; i<n; i++){
+//            long posHeader = 8 + (i*8);
+//            getCustomRandom().getRafH().seek(posHeader);
+//            int key = getCustomRandom().getRafH().readInt();
+//            if(key!=t.getStockNumber()){
+//                ides= add_ids(ides,key);
+//            }
+//        }
+//        getCustomRandom().getRafH().seek(0);
+//        getCustomRandom().getRafH().writeInt(--n);
+//        getCustomRandom().getRafH().writeInt(k);
+//        
+//        for (int ide : ides) {
+//            getCustomRandom().getRafH().writeInt(ide);
+//        }
         
         return true;
     }
