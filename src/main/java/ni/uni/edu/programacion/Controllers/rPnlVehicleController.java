@@ -122,7 +122,7 @@ public class rPnlVehicleController {
             rpnlVehicle.getTableVehicles().setValueAt(v.get(i).getTransmission().toString(), i, 10);
             rpnlVehicle.getTableVehicles().setValueAt(v.get(i).getEngine(), i, 11);
             rpnlVehicle.getTableVehicles().setValueAt(v.get(i).getImage(), i, 12);
-            rpnlVehicle.getTableVehicles().setValueAt(null, i, 13);
+            rpnlVehicle.getTableVehicles().setValueAt(v.get(i).getStatus(), i, 13);
             
             
         }

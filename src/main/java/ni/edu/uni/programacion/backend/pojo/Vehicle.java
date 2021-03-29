@@ -10,6 +10,8 @@ package ni.edu.uni.programacion.backend.pojo;
  * @author yasser.membreno
  */
 public class Vehicle {
+
+  
     
     private int stockNumber;//20    1
     private int year;//4    2
@@ -162,11 +164,20 @@ public class Vehicle {
     public void setImage(String image) {
         this.image = image;
     }
+  public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
 
     @Override
     public String toString() {
         return "Vehicle{" + "stockNumber=" + stockNumber + ", year=" + year + ", make=" + make + ", model=" + model + ", style=" + style + ", vin=" + vin + ", exteriorColor=" + exteriorColor + ", interiorColor=" + interiorColor + ", miles=" + miles + ", price=" + price + ", transmission=" + transmission + ", engine=" + engine + ", image=" + image + ", status=" + status + '}';
     }
+    
+
     
     
     
