@@ -102,7 +102,9 @@ public class rPnlVehicleController {
     }
     private void btnViewActionListener(ActionEvent e) throws IOException {                                        
         v = (List<Vehicle>) jvdao.getAll();
-        
+        while(v.size()>rpnlVehicle.getTableVehicles().getRowCount()){
+            dtm.addRow(new Object[]{});
+        }        
         for(int i=0; i<v.size(); i++){
             
             
