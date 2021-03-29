@@ -32,16 +32,16 @@ public class JsonVehicleDaoImpl extends RandomTemplate implements VehicleDao{
     
     @Override
     public Vehicle findById(int id) throws IOException {
-        List<Vehicle> vehicles = new ArrayList<>();
-        vehicles = (List<Vehicle>) getAll();
-        for (Vehicle vehicle : vehicles) {
-
-            if(vehicle.getStockNumber() == id){
-                
-                return vehicle;
-            }
-            
-        }
+//        List<Vehicle> vehicles = new ArrayList<>();
+//        vehicles = (List<Vehicle>) getAll();
+//        for (Vehicle vehicle : vehicles) {
+//
+//            if(vehicle.getStockNumber() == id){
+//                
+//                return vehicle;
+//            }
+//            
+//        }  ESTO NO IBA
         return null;
     }
 
@@ -82,16 +82,16 @@ public class JsonVehicleDaoImpl extends RandomTemplate implements VehicleDao{
         
         return t.getStockNumber();
     }
-    private int[] add_ids (int[] arreglo,int id){
-        if(arreglo== null){
-            arreglo=new int[1];
-            arreglo[0]=id;
-            return arreglo;
-        }
-        arreglo=Arrays.copyOf(arreglo , arreglo.length +1 );
-        arreglo[arreglo.length-1]=id;
-        return arreglo;
-    }
+//    private int[] add_ids (int[] arreglo,int id){
+//        if(arreglo== null){
+//            arreglo=new int[1];
+//            arreglo[0]=id;
+//            return arreglo;
+//        }
+//        arreglo=Arrays.copyOf(arreglo , arreglo.length +1 );
+//        arreglo[arreglo.length-1]=id;
+//        return arreglo;
+//    } ESTO NO VA 
 
     @Override
     public boolean delete(Vehicle t) throws IOException {

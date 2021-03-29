@@ -9,6 +9,8 @@ import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.google.gson.stream.JsonReader;
 import java.awt.event.ActionEvent;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -20,7 +22,9 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
+import javax.swing.RowFilter;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableRowSorter;
 import ni.edu.uni.programacion.backend.dao.implementation.JsonVehicleDaoImpl;
 import ni.edu.uni.programacion.backend.pojo.Vehicle;
 import ni.edu.uni.programacion.backend.pojo.VehicleSubModel;
@@ -51,6 +55,18 @@ public class rPnlVehicleController {
             }
         });
         
+        rpnlVehicle.getTxtSearch().addKeyListener(new KeyAdapter() {
+
+        public void keyReleased(final KeyEvent e){
+            TableRowSorter tbfiltro = new TableRowSorter(rpnlVehicle.getTableVehicles().getModel());
+            String s = rpnlVehicle.getTxtSearch().getText();
+            rpnlVehicle.getTxtSearch().setText(s);
+
+            Filtro(rpnlVehicle.getCmbFilter().getSelectedIndex(),tbfiltro);
+        }
+
+        });//
+        
 //        rpnlVehicle.getBtnDelete().addActionListener((e)->{
 //            try {
 //                btnDeleteActionListener(e);
@@ -79,6 +95,10 @@ public class rPnlVehicleController {
 //        JOptionPane.showMessageDialog(null, "No es posible eliminar");
 //        
 //        
+    }
+    private void Filtro(int column, TableRowSorter filter){
+     filter.setRowFilter(RowFilter.regexFilter(rpnlVehicle.getTxtSearch().getText(), column));
+        rpnlVehicle.getTableVehicles().setRowSorter(filter);   
     }
     private void btnViewActionListener(ActionEvent e) throws IOException {                                        
         v = (List<Vehicle>) jvdao.getAll();

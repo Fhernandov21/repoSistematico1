@@ -62,7 +62,7 @@ public class PnlVehicleController {
     }
 
     public PnlVehicleController(rPnlVehicle rpnlVehicle) throws FileNotFoundException {
-        this.rpnlVehicle = rpnlVehicle;
+        this.rpnlVehicle = rpnlVehicle; 
         initComponent();
     }
 

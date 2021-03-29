@@ -6,6 +6,7 @@
 package ni.uni.edu.programacion.views.panels;
 
 import javax.swing.JButton;
+import javax.swing.JComboBox;
 import javax.swing.JTable;
 import javax.swing.JTextField;
 
@@ -34,12 +35,14 @@ public class rPnlVehicle extends javax.swing.JPanel {
         return btnGetAll;
     }
 
-    public JButton getBtnSearch() {
-        return btnSearch;
-    }
+   
 
     public JTable getTableVehicles() {
         return tableVehicles;
+    }
+
+    public JComboBox<String> getCmbFilter() {
+        return cmbFilter;
     }
 
     public void setTableVehicles(JTable tableVehicles) {
@@ -62,8 +65,9 @@ public class rPnlVehicle extends javax.swing.JPanel {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        cmbFilter = new javax.swing.JComboBox<>();
         txtSearch = new javax.swing.JTextField();
-        btnSearch = new javax.swing.JButton();
         btnDelete = new javax.swing.JButton();
         btnUpdate = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
@@ -76,19 +80,25 @@ public class rPnlVehicle extends javax.swing.JPanel {
 
         jPanel1.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.LEFT));
 
+        jLabel1.setText("Buscar por :");
+        jPanel1.add(jLabel1);
+
+        cmbFilter.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ID (StockNumber)", "Year", "Make", "Model", "Style", "VIN" }));
+        jPanel1.add(cmbFilter);
+
         txtSearch.setPreferredSize(new java.awt.Dimension(250, 19));
         txtSearch.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtSearchActionPerformed(evt);
             }
         });
+        txtSearch.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtSearchKeyTyped(evt);
+            }
+        });
         jPanel1.add(txtSearch);
 
-        btnSearch.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/vidrio-de-aumento.png"))); // NOI18N
-        btnSearch.setText("Buscar");
-        jPanel1.add(btnSearch);
-
-        btnDelete.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/delete (2).png"))); // NOI18N
         btnDelete.setText("Borrar");
         btnDelete.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -97,7 +107,6 @@ public class rPnlVehicle extends javax.swing.JPanel {
         });
         jPanel1.add(btnDelete);
 
-        btnUpdate.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Webp.net-resizeimage.png"))); // NOI18N
         btnUpdate.setText("Actualizar");
         jPanel1.add(btnUpdate);
 
@@ -169,12 +178,17 @@ public class rPnlVehicle extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnDeleteActionPerformed
 
+    private void txtSearchKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtSearchKeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtSearchKeyTyped
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnDelete;
     private javax.swing.JButton btnGetAll;
-    private javax.swing.JButton btnSearch;
     private javax.swing.JButton btnUpdate;
+    private javax.swing.JComboBox<String> cmbFilter;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
